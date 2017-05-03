@@ -1,0 +1,320 @@
+/*!
+ Description:  Lorain County Community College Child Theme
+ Author:       LCCC Web Team
+ Author URI:   http://www.lorainccc.edu
+ Template:     lccc-framework
+ Version:      1.0.0
+ Text Domain:  lorainccc
+*/
+/*!
+Table of Contents
+Color Section : LCCC Color Scheme
+Mixin Section : LCCC Mixins
+Section 1: Foundation
+Section 2: Body
+Section 3: Header
+Section 4: Navigation
+Section 5: Footer
+Section 6: Text
+*/
+/* Color Section : LCCC Color Scheme */
+/*! Mixin Section : LCCC Mixins */
+/*!  Section 1 - Foundation Overrides */
+@media screen and (max-width: 800px) {
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    background: #333333;
+    line-height: 2.8125rem;
+    padding: 0 0.3375rem;
+  }
+
+  .top-bar-section ul li > a {
+    color: #FFFFFF;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 0.799rem;
+    font-weight: normal;
+    padding-left: 0.9375rem;
+    padding: 12px 0 12px 0.9375rem;
+    text-transform: none;
+    width: 100%;
+  }
+}
+.row {
+  margin: 0 auto;
+  max-width: 64.0rem;
+  width: 100%;
+}
+
+/*!  Section 2 - Body Styles */
+body {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+#page {
+  background-image: linear-gradient(#000006, #060143);
+}
+
+.maincontent {
+  background-color: #FFFFFF;
+}
+
+.columns img {
+  margin: 5px 0;
+}
+
+.sidebarcontainer {
+  margin-top: 15px;
+}
+
+.contentrow {
+  margin-top: 15px;
+}
+
+#yoastbreadcrumbs {
+  margin: 0 auto 10px -5;
+  padding: 3px 0;
+  float: left;
+}
+
+.registerbutton {
+  background-image: linear-gradient(#6463CE, #061662);
+  width: 100%;
+}
+
+.registerbtholder {
+  border-bottom: 1px solid #000000;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+.sidebarbtheader {
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.connectholder {
+  margin-top: 20px;
+}
+
+#navlist li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 0px;
+}
+
+#navlist {
+  margin: 0;
+}
+
+hr {
+  border: solid #9A9A9A;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin: 1.25rem 0 1.1875rem;
+}
+
+/*! Section 3 - Header */
+#jvsheaderlogo {
+  float: left;
+  display: block;
+  margin: 30px 20px 5px 0;
+}
+@media screen and (max-width: 640px) {
+  #jvsheaderlogo {
+    margin: 0;
+  }
+}
+
+#lcccheaderlogo {
+  float: left;
+  display: block;
+  margin: 40px 20px 0 20px;
+}
+@media screen and (max-width: 778px) {
+  #lcccheaderlogo {
+    margin: 40px 1px 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  #lcccheaderlogo .headersidebar {
+    padding-top: 0px;
+  }
+}
+
+@media screen and (max-width: 778px) {
+  .brandinglogos {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .brandinglogos {
+    padding: 0;
+  }
+}
+
+.site-header {
+  background-image: url(images/header.png);
+  height: 164px;
+  background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 640px) {
+  #lcwins-logo {
+    margin-top: 40px;
+  }
+}
+
+.headersidebar {
+  padding-top: 15px;
+}
+
+/*! Section 4 - Navigation Styles  */
+.svc-top-nav {
+  background-color: #404040;
+  height: 22px;
+}
+
+.primary-top-nav {
+  background-color: #00539f;
+  height: 32px;
+}
+
+.svc-top-nav ul {
+  float: right;
+  list-style: none;
+  margin: -3px 0;
+}
+
+.svc-top-nav li {
+  float: left;
+}
+
+.svc-top-nav li a {
+  color: #FFFFFF;
+  font-size: 9pt;
+}
+
+.primary-top-nav ul {
+  float: right;
+  margin-top: 3px;
+}
+
+.primary-top-nav li a {
+  color: #FFFFFF;
+}
+
+.primary-menu-divider, .secondary-menu-divider {
+  color: #FFFFFF;
+}
+
+#primary-menu li.primary-menu-divider:last-child {
+  display: none;
+}
+
+#services-menu li.secondary-menu-divider:last-child {
+  display: none;
+}
+
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 960px;
+  margin: 15px 0 0 0;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: linear-gradient(#00B5F1, #024a8c);
+  padding: 5px 5px 5px 15px;
+}
+
+.main-navigation ul a {
+  color: #FFFFFF;
+}
+
+/* Section 5 - Footer Area */
+#footer-area {
+  background-color: #4E4E4E;
+  height: 190px;
+  color: #FFFFFF;
+}
+
+#footer-area a {
+  color: #FFFFFF;
+}
+
+#footer-logo {
+  padding: 28px 0 0 31px;
+}
+
+#lccc-address {
+  padding: 0 0 0 31px;
+  font-size: 10pt;
+}
+
+.site-footer {
+  height: 141px;
+  background-image: url(images/footer.png);
+  background-color: #FFFFFF;
+}
+
+.footertagline {
+  color: #FFFFFF;
+  float: left;
+}
+
+.footerlccc {
+  color: #FFFFFF;
+  float: right;
+}
+
+.site-info {
+  margin-top: 110px;
+  color: #fff;
+  margin-left: 40px;
+  font-size: 10pt;
+  display: inline-block;
+}
+
+/*Section 6 Text */
+h1, h2 {
+  font-family: 'Droid Serif', serif;
+}
+
+h2 {
+  font-size: 18pt;
+}
+
+.homebuttontext {
+  font-family: 'Droid Serif', serif;
+  font-size: 1.75rem;
+  color: #FFFFFF;
+}
+
+h2.site-description {
+  width: 400px;
+  float: right;
+  margin: 0 60px 0 0;
+  padding: 2px 0;
+  font-family: 'Nunito', Sans-Serif;
+  font-size: 12pt;
+  font-weight: 700;
+}
+@media screen and (max-width: 640px) {
+  h2.site-description {
+    margin: 0;
+    float: left;
+    margin-left: -35px;
+    font-size: 11.4pt;
+  }
+}
+
+.registerbutton h3 {
+  color: #FFFFFF;
+  box-shadow: white(0.8) 0 1px 0, inset black(0.05) 0 1px 0;
+}

@@ -1,0 +1,58 @@
+/*! Section 4 - Navigation Styles  */
+
+.svc-top-nav{
+	background-color: $lcccdarkgray;
+	height: 22px;
+}
+
+.primary-top-nav{
+	background-color: $lcccblue;
+	height: 32px;
+}
+.svc-top-nav ul{ 
+	float: right;
+	list-style: none;
+	margin: -3px 0;
+}
+
+.svc-top-nav li{
+	float:left;
+}
+
+.svc-top-nav li a{
+	color: $lcccnavlinkcolor;
+	font-size: 9pt;
+
+}
+.primary-top-nav ul{
+	float: right;
+	margin-top: 3px;
+}
+
+.primary-top-nav li a{
+	color: $lcccnavlinkcolor;
+}
+
+.primary-menu-divider, .secondary-menu-divider {
+	color: $lcccnavlinkcolor;
+}
+
+#primary-menu li.primary-menu-divider:last-child{
+	display: none;
+}
+
+#services-menu li.secondary-menu-divider:last-child{
+	display: none;
+}
+
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 960px;
+  margin: 15px 0 0 0;
+		 @include radius(20px);
+	background-image: linear-gradient($winslightblue, $lcccdarkblue);
+	padding: 5px 5px 5px 15px;
+}
+.main-navigation ul a {color:$white;}

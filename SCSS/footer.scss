@@ -1,0 +1,24 @@
+/* Section 5 - Footer Area */
+#footer-area{
+	background-color: $footerbackground;
+	height: 190px;
+	color: $footerareatextcolor;
+}
+#footer-area a{
+	color: $footerareatextcolor;
+}
+#footer-logo{
+	padding: 28px 0 0 31px;
+}
+#lccc-address{
+	padding: 0 0 0 31px;
+	font-size: 10pt;
+}
+.site-footer{
+  height: 141px;
+  background-image: url(images/footer.png);
+		background-color: $white;
+}
+.footertagline{color: $white; float: left;}
+.footerlccc{color: $white; float: right;}
+.site-info{  margin-top: 110px;color: #fff;margin-left: 40px;font-size: 10pt;display: inline-block;}

@@ -1,0 +1,28 @@
+/*!  Section 1 - Foundation Overrides */
+// Transitions and breakpoint styles
+// $topbar-transition-speed: 300ms;
+// Using rem-calc for the below breakpoint causes issues with top bar
+$foundationbreakpoint: 800px;
+@media screen and (max-width: $foundationbreakpoint){
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #333333;
+  line-height: 2.8125rem;
+  padding: 0 0.3375rem;
+}
+	.top-bar-section ul li > a {
+  color: #FFFFFF;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.799rem;
+  font-weight: normal;
+  padding-left: 0.9375rem;
+  padding: 12px 0 12px 0.9375rem;
+  text-transform: none;
+  width: 100%;
+}
+}
+.row {
+  margin: 0 auto;
+  max-width: 64.0rem;
+  width: 100%;
+}

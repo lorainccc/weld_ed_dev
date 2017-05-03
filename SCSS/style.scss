@@ -1,0 +1,30 @@
+/*!
+ Description:  Lorain County Community College Child Theme
+ Author:       LCCC Web Team
+ Author URI:   http://www.lorainccc.edu
+ Template:     lccc-framework
+ Version:      1.0.0
+ Text Domain:  lorainccc
+*/
+/*!
+Table of Contents
+Color Section : LCCC Color Scheme
+Mixin Section : LCCC Mixins
+Section 1: Foundation
+Section 2: Body
+Section 3: Header
+Section 4: Navigation
+Section 5: Footer
+Section 6: Text
+*/
+
+@import "bourbon/bourbon";
+@import 'color.scss';
+@import 'mixins.scss';
+@import 'foundation.scss';
+@import 'body.scss';
+@import 'header.scss';
+@import 'navigation.scss';
+@import 'footer.scss';
+@import 'text.scss';
+

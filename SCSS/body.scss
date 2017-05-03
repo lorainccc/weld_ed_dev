@@ -1,0 +1,34 @@
+/*!  Section 2 - Body Styles */
+$mobilebodybreakingpoint: 640px;
+body{
+	font-family: 'Droid Sans', sans-serif;
+	
+}
+#page{	background-image: linear-gradient($bodybackground1, $bodybackground2);}
+.maincontent{background-color: $white;}
+.columns img{
+	margin: 5px 0;
+}
+
+.sidebarcontainer{margin-top: 15px;}
+.contentrow{margin-top: 15px;}
+
+#yoastbreadcrumbs{ 
+  margin: 0 auto 10px -5;
+  padding: 3px 0;
+float: left;
+}
+.registerbutton{background-image: linear-gradient($registerbutton1,$registerbutton2); width: 100%;}
+
+.registerbtholder{border-bottom: 1px solid $black; padding: 10px; margin-left: 5px;}
+.sidebarbtheader{  font-size: 16pt; font-weight: bold;  text-align: center;}
+.connectholder{margin-top: 20px;}
+#navlist li { display: inline; list-style-type: none; padding-right: 0px; }
+#navlist{margin: 0;}
+hr {
+  border: solid #9A9A9A;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin: 1.25rem 0 1.1875rem;
+}
