@@ -15,7 +15,7 @@ get_header(); ?>
 <div class="small-12 medium-12 large-12 columns maincontent">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="medium-3 large-3 columns show-for-medium-up sidenavigation">
+			<div class="medium-3 large-3 columns show-for-medium sidenavigation">
 			<?php if ( is_active_sidebar( 'sidebarnavigation' ) ) : ?>
 					<ul id="navsidebar">
 						<?php dynamic_sidebar( 'sidebarnavigation' ); ?>

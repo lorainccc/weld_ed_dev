@@ -5,17 +5,17 @@ Template Name: Subpage with no sidebar
 get_header(); ?>
 
 <div class="small-12 medium-12 large-12 columns maincontent">
-	<div id="primary" class="content-area">
+	<div class="small-12 medium-12 large-12 columns">
+			<div class="small-12 medium-12 large-12 columns">
+         <div id="yoastbreadcrumbs">
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+                        yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+                    } ?>
+                </div><!--closes yoastbreadcrumbs div -->
+</div>
+	<div id="primary" class="small-12 medium-12 large-12 columns content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="medium-3 large-3 columns show-for-medium-up sidenavigation">
-			<?php if ( is_active_sidebar( 'sidebarnavigation' ) ) : ?>
-					<ul id="navsidebar">
-						<?php dynamic_sidebar( 'sidebarnavigation' ); ?>
-					</ul>
-				<?php endif; ?>
-			
-			</div>
-			<div class="small-12 medium-9 large-9 columns">
+			<div class="small-12 medium-12 large-12 columns">
 		
 			<?php while ( have_posts() ) : the_post(); ?>
 

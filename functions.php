@@ -20,20 +20,15 @@ function welded_scripts()
 	wp_enqueue_style( 'lccc-framework-style', get_template_directory_uri() .'/style.css' );
 
 	/* ----- Add Foundation Support From Parent Theme ----- */
-	/* Add Foundation CSS */
+		/* Foudnation Init JS */
+ wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery', 'foundation-js' ), '1', true );
 	
-	wp_enqueue_style( 'foundation-normalize', get_template_directory_uri()  . '/foundation/css/normalize.css' );
-	wp_enqueue_style( 'foundation', get_template_directory_uri()  . '/foundation/css/foundation.css' );
+	 wp_enqueue_style( 'foundation-app',  get_template_directory_uri() . '/foundation/css/app.css' );
+		wp_enqueue_style( 'foundation-normalize', get_template_directory_uri() . '/foundation/css/normalize.css' );
+		wp_enqueue_style( 'foundation',  get_template_directory_uri() . '/foundation/css/foundation.css' );
 
-	/* Add Foundation JS */
-	
-	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js', array( 'jquery' ), '1', true );
-	wp_enqueue_script( 'foundation-modernizr-js', get_template_directory_uri() . '/foundation/js/vendor/modernizr.js', array( 'jquery' ), '1', true );
-	
-	/* Foundation Init JS */
-	
-	wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
-	
+		wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/vendor/foundation.js', array( 'jquery' ), '1', true );
+		wp_enqueue_script( 'foundation-whatinput', get_template_directory_uri() . '/foundation/js/vendor/what-input.js', array( 'jquery' ), '1', true);
 	/* ----- End Foundation Support ----- */
 	
 	wp_enqueue_script( 'lccc-framework-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -108,3 +103,60 @@ function welded_widgets_init() {
 add_action( 'widgets_init', 'welded_widgets_init' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support('custom-background');
+
+/* Menu Functions */
+
+class lc_top_bar_menu_walker extends Walker_Nav_Menu
+{
+	/*
+	 * Add vertical menu class and submenu data attribute to sub menus
+	 */
+
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"vertical menu\" data-submenu>\n";
+	}
+}
+
+//Optional fallback
+function lc_topbar_menu_fallback($args)
+{
+	/*
+	 * Instantiate new Page Walker class instead of applying a filter to the
+	 * "wp_page_menu" function in the event there are multiple active menus in theme.
+	 */
+
+	$walker_page = new Walker_Page();
+	$fallback = $walker_page->walk(get_pages(), 0);
+	$fallback = str_replace("<ul class='children'>", '<ul class="children submenu menu vertical" data-submenu>', $fallback);
+
+	echo '<ul class="dropdown menu" data-dropdown-menu">'.$fallback.'</ul>';
+}
+
+class lc_drill_menu_walker extends Walker_Nav_Menu
+{
+	/*
+	 * Add vertical menu class
+	 */
+
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"vertical menu\">\n";
+	}
+}
+
+function lc_drill_menu_fallback($args)
+{
+	/*
+	 * Instantiate new Page Walker class instead of applying a filter to the
+	 * "wp_page_menu" function in the event there are multiple active menus in theme.
+	 */
+
+	$walker_page = new Walker_Page();
+	$fallback = $walker_page->walk(get_pages(), 0);
+	$fallback = str_replace("children", "children vertical menu", $fallback);
+	echo '<ul class="vertical menu" data-drilldown="">'.$fallback.'</ul>';
+}
+
+/* End Menu Functions */
+

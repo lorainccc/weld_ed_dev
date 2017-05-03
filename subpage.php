@@ -4,7 +4,8 @@ Template Name: Subpage
  */
 get_header(); ?>
 
-<div class="small-12 medium-12 large-12 columns">
+<div class="small-12 medium-12 large-12 columns maincontent">
+	<div class="small-12 medium-12 large-12 columns">
 			<div class="small-12 medium-12 large-12 columns">
          <div id="yoastbreadcrumbs">
 					<?php if ( function_exists('yoast_breadcrumb') ) {
@@ -12,36 +13,36 @@ get_header(); ?>
                     } ?>
                 </div><!--closes yoastbreadcrumbs div -->
 </div>
-<div class="small-12 medium-12 large-12 columns contentrow">
-	<div id="primary" class="content-area">
+	<div id="primary" class="small-12 medium-12 large-12 columns content-area">
 		<main id="main" class="site-main" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
+			<div class="medium-3 large-3 columns show-for-medium-up sidenavigation">
+			<?php if ( is_active_sidebar( 'sidebarnavigation' ) ) : ?>
+					<ul id="navsidebar">
+						<?php dynamic_sidebar( 'sidebarnavigation' ); ?>
+					</ul>
+				<?php endif; ?>
+			
+			</div>
+			<div class="small-12 medium-9 large-9 columns">
+		
 			<?php while ( have_posts() ) : the_post(); ?>
 
+				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
 				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+					// If comments are open or we have at least one comment, load up the comment template
+	if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 				?>
 
-			<?php endwhile; ?>
+			<?php endwhile; // end of the loop. ?>
 
-			<?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	</div>
-
+		
 </div>
+
 <?php get_footer(); ?>

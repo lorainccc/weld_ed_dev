@@ -20,27 +20,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lccc-framework' ); ?></a>
-
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-<div class="hide-for-medium-up">
-    <nav class="tab-bar">
-      <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-							
-      </section>
-      <section class="middle tab-bar-section">
-        <h1 class="title">Menu</h1>
-      </section>
-    </nav>
-			</div>
-    <aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Midpointcampus</label></li>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-      </ul>
-    </aside>
-			
 	<div class="row">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
@@ -49,7 +28,30 @@
 		<img src='<?php echo get_stylesheet_directory_uri();  ?>/images/welded-logo.png' border="0" />
 			</a>
 				</div>
-			<div class="small-12  medium-4 large-4 columns headersidebar">
+		<div class="small-12 columns show-for-small-only nopadding">
+				<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+							<button class="menu-icon" type="button" data-toggle="example-menu"></button>
+							<div class="title-bar-title">Menu</div>
+				</div>
+				<div id="example-menu" class="top-bar" >
+									<nav role="navigation" aria-label="<?php _e( 'Mobile Main Menu', 'lorainccc' );?>">
+								<ul id="responsive-menu"  class="vertical menu" data-drilldown data-parent-link="true">
+									<?php 	wp_nav_menu(array(
+																	'container' => false,
+																	'menu' => __( 'Drill Menu', 'textdomain' ),
+																	'menu_class' => 'vertical menu',
+																	'theme_location' => 'primary',
+																	'menu_id' => 'mobile-primary-menu',
+																		//Recommend setting this to false, but if you need a fallback...
+																		'fallback_cb' => 'lc_drill_menu_fallback',
+																	'walker' => new lc_drill_menu_walker(),								
+								));
+									?>
+								</ul>
+					</nav>
+				</div>
+	</div>
+			<div class="small-12  medium-4 large-4 columns headersidebar show-for-medium">
 							<?php if ( is_active_sidebar( 'headersidebar' ) ) : ?>
 					<ul id="navsidebar">
 						<?php dynamic_sidebar( 'headersidebar' ); ?>
